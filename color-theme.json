@@ -1,0 +1,158 @@
+{
+  "type": "dark",
+  "colors": {
+    "ActivityBarBackground": "#f8f9fa",
+    "ActivityBarActiveForeground": "#8a9199cc",
+    "ActivityBarForeground": "#8a919999",
+    "ActivityBarBorder": "#f8f9fa",
+
+    "BadgeBackground": "#ffaa33",
+    "BadgeForeground": "#f8f9fa",
+
+    "ContextMenuBackground": "rgb(252, 252, 252)",
+    "ContextMenuForeground": "rgb(138, 145, 153)",
+
+    "EditorBackGround": "",
+    "EditorScrollBarBackground": "rgba(138, 145, 153, 0.6)",
+    "EditorCursorBackground": "#ffaa33",
+    "EditorSelectionBackground": "rgba(3, 91, 214, 0.15)",
+
+    "FocusOutline": "#ffaa33b3",
+
+    "InputBoxForeground": "rgb(92, 97, 102)",
+
+    "ListActiveSelectionBackground": "#56728f1f",
+    "ListActiveSelectionForeground": "#5c6166",
+    "ListHoverBackground": "#56728f1f",
+    "ListHoverForeground": "",
+    "ListInactiveSelectionBackground": "",
+    "ListForeground": "rgb(138, 145, 153)",
+
+    "MainBackground": "#f8f9fa",
+
+    "MenuBackground": "rgb(252, 252, 252)",
+    "MenuForeground": "rgb(138, 145, 153)",
+    "MenuBoxShadow": "rgb(0 0 0 / 15%) 0px 2px 4px",
+
+    "MenuItemHoverForeground": "rgb(92, 97, 102)",
+    "MenuItemHoverBackground": "rgba(86, 114, 143, 0.12)",
+
+    "PanelBackground": "#f8f9fa",
+    "PanelBorderTopColor": "#6b7d8f1f",
+    "PanelTabForeground": "rgb(138, 145, 153)",
+    "PanelTabActiveForeground": "rgb(92, 97, 102)",
+
+    "QuickPickBackground": "rgb(243, 244, 245)",
+
+    "SideBarBackground": "#f8f9fa",
+    "SideBarBorder": "#f8f9fa",
+    "SideBarForeground": "rgb(138, 145, 153)",
+
+    "StatusBarBackground": "#f8f9fa",
+    "StatusBarForeground": "#8a9199",
+    "StatusBarBorderTopColor": "#f8f9fa",
+
+    "TabForeground": "rgb(138, 145, 153)",
+    "TabActiveForeground": "rgb(92, 97, 102)",
+    "TabActiveBackground": "",
+    "TabInactiveBackground": "",
+
+    "TitleBarBackground": "",
+    "TitleBarBorderBottomColor": "",
+    "TitleBarForeground": "#8a9199",
+    "TitleBarColorInactive": "",
+    "TitleBarItemHoverForeground": "rgba(0, 0, 0, 0.1)",
+
+    "TreeItemForeground": "#8a9199"
+  },
+  "tokenColors": [
+    {
+      "name": "CssSelector",
+      "foreground": "#f2ae49"
+    },
+    {
+      "name": "CssPropertyName",
+      "foreground": "#55b4d4"
+    },
+    {
+      "name": "CssPropertyValue",
+      "foreground": "#ed9366"
+    },
+    {
+      "name": "TagName",
+      "foreground": "#55b4d4"
+    },
+    {
+      "name": "PunctuationTag",
+      "foreground": "rgba(85, 180, 212, 0.5)"
+    },
+    {
+      "name": "AttributeName",
+      "foreground": "#f2ae49"
+    },
+    {
+      "name": "String",
+      "foreground": "#86B300"
+    },
+    {
+      "name": "PunctuationString",
+      "foreground": "#86b300"
+    },
+    {
+      "name": "JsonPropertyName",
+      "foreground": "#55B4D4"
+    },
+    {
+      "name": "Punctuation",
+      "foreground": "#5C6166B3"
+    },
+    {
+      "name": "LanguageConstant",
+      "foreground": "#A37ACC"
+    },
+    {
+      "name": "VariableName",
+      "foreground": "#5c6166"
+    },
+    {
+      "name": "KeywordImport",
+      "foreground": "#FA8D3E"
+    },
+    {
+      "name": "Text",
+      "foreground": "#5c6166"
+    },
+    {
+      "name": "Comment",
+      "foreground": "#787B8099"
+    },
+    {
+      "name": "Keyword",
+      "foreground": "#fa8d3e"
+    },
+    {
+      "name": "Numeric",
+      "foreground": "#a37acc"
+    },
+    {
+      "name": "Type",
+      "foreground": "#399ee6"
+    },
+    {
+      "name": "Regex",
+      "foreground": "#4CBF99"
+    },
+    {
+      "name": "Parameter",
+      "foreground": "#a37acc"
+    },
+    {
+      "name": "Function",
+      "foreground": "#f2ae49"
+    },
+    {
+      "name": "KeywordControl",
+      "foreground": "#FA8D3E"
+    }
+  ]
+}
