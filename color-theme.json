@@ -153,6 +153,18 @@
     {
       "name": "KeywordControl",
       "foreground": "#FA8D3E"
+    },
+    {
+      "name": "Heading",
+      "foreground": "#86b300"
+    },
+    {
+      "name": "VariableName",
+      "foreground": "#a37acc"
+    },
+    {
+      "name": "KeywordReturn",
+      "foreground": "#fa8d3e"
     }
   ]
 }
