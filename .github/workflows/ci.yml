@@ -13,7 +13,60 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-22.04]
+    runs-on: ${{ matrix.os }}name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  ci:
+    strategy:
+      matrix:
+        os: [ubuntu-22.04]
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+      - uses: actions/cache@v3
+        id: npm-cache
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('.github/workflows/*.yml') }}
+          restore-keys: ${{ runner.os }}-node-
+      - name: npm ci
+        run: npm ci
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+      - name: Build static site
+        run: node scripts/build-static.js
+        env:
+          PATH_PREFIX: /theme-ayu
+      - name: Upload artifact
+        if: matrix.os == 'ubuntu-22.04'
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./dist
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-22.04
+    needs: ci
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v3
