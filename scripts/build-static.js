@@ -6,7 +6,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const root = path.join(__dirname, '..')
 const pathPrefix = process.env.PATH_PREFIX || ''
-const name = 'ayu'
 
 const dirents = readdirSync(
   join(root, 'node_modules', '@lvce-editor', 'server', 'static')
@@ -16,6 +15,14 @@ const isCommitHash = (dirent) => {
   return dirent.length === 7 && dirent.match(RE_COMMIT_HASH)
 }
 const commitHash = dirents.find(isCommitHash) || ''
+
+const readJson = (path) => {
+  const content = readFileSync(path, 'utf8')
+  return { ...JSON.parse(content), path }
+}
+
+const extensionJson = readJson(join(root, 'extension.json'))
+const name = extensionJson.id.slice('builtin.theme-'.length)
 
 fs.rmSync(join(root, 'dist'), { recursive: true, force: true })
 
@@ -37,6 +44,9 @@ fs.cpSync(
 
 const replaceSync = (path, occurrence, replacement) => {
   const oldContent = readFileSync(path, 'utf8')
+  if (!oldContent.includes(occurrence)) {
+    throw new Error(`failed to replace occurrence ${occurrence}: Not found`)
+  }
   // @ts-ignore
   const newContent = oldContent.replaceAll(occurrence, replacement)
   writeFileSync(path, newContent)
@@ -108,6 +118,55 @@ replaceSync(
   `return "${pathPrefix}/${commitHash}";`
 )
 replaceSync(
+  join(
+    root,
+    'dist',
+    commitHash,
+    'packages',
+    'renderer-worker',
+    'dist',
+    'rendererWorkerMain.js'
+  ),
+  `getColorThemeUrlWeb = (colorThemeId) => {
+      return \`/extensions/builtin.theme-\${colorThemeId}/color-theme.json\`;
+    };`,
+  `const getColorThemeUrlWeb = (colorThemeId) => {
+      const assetDir = getAssetDir()
+      return \`\${assetDir}/themes/\${colorThemeId}.json\`
+    }`
+)
+replaceSync(
+  join(
+    root,
+    'dist',
+    commitHash,
+    'packages',
+    'renderer-worker',
+    'dist',
+    'rendererWorkerMain.js'
+  ),
+  `getIconThemeUrl = (iconThemeId) => {
+      return \`/extensions/builtin.\${iconThemeId}/icon-theme.json\`;
+    }`,
+  `getIconThemeUrl = (iconThemeId) => {
+      const assetDir = getAssetDir()
+      return \`\${assetDir}/icon-themes/\${iconThemeId}.json\`
+    }`
+)
+replaceSync(
+  join(
+    root,
+    'dist',
+    commitHash,
+    'packages',
+    'renderer-worker',
+    'dist',
+    'rendererWorkerMain.js'
+  ),
+  `return \`\${extensionPath}\${value}\``,
+  `return \`${pathPrefix}/${commitHash}/file-icons/\${value.slice(7)}\``
+)
+replaceSync(
   join(root, 'dist', commitHash, 'config', 'defaultSettings.json'),
   `"workbench.colorTheme": "slime"`,
   `"workbench.colorTheme": "${name}"`
@@ -126,12 +185,17 @@ const isLanguageBasics = (dirent) => {
   return dirent.startsWith('builtin.language-basics')
 }
 
-const languageBasicsDirents = extensionDirents.filter(isLanguageBasics)
-
-const readJson = (path) => {
-  const content = readFileSync(path, 'utf8')
-  return { ...JSON.parse(content), path }
+const isTheme = (dirent) => {
+  return dirent.startsWith('builtin.theme-')
 }
+
+const isIconTheme = (dirent) => {
+  return dirent === 'builtin.vscode-icons'
+}
+
+const languageBasicsDirents = extensionDirents.filter(isLanguageBasics)
+const themeDirents = extensionDirents.filter(isTheme)
+const iconThemeDirents = extensionDirents.filter(isIconTheme)
 
 const writeJson = (path, json) => {
   const content = JSON.stringify(json, null, 2) + '\n'
@@ -164,14 +228,82 @@ const languages = languageBasicsDirents
   .map(readJson)
   .flatMap(getLanguages)
 writeJson(join(root, 'dist', commitHash, 'config', 'languages.json'), languages)
-cpSync(
-  join(root, 'node_modules', '@lvce-editor', 'shared-process', 'extensions'),
-  join(root, 'dist', commitHash, 'extensions'),
-  {
-    recursive: true,
-  }
-)
 
+for (const languageBasicsDirent of languageBasicsDirents) {
+  cpSync(
+    join(
+      root,
+      'node_modules',
+      '@lvce-editor',
+      'shared-process',
+      'extensions',
+      languageBasicsDirent
+    ),
+    join(root, 'dist', commitHash, 'extensions', languageBasicsDirent),
+    {
+      recursive: true,
+    }
+  )
+}
+
+const getThemeName = (dirent) => {
+  return dirent.slice('builtin.theme-'.length)
+}
+
+for (const themeDirent of themeDirents) {
+  const themeId = getThemeName(themeDirent)
+  cpSync(
+    join(
+      root,
+      'node_modules',
+      '@lvce-editor',
+      'shared-process',
+      'extensions',
+      themeDirent,
+      'color-theme.json'
+    ),
+    join(root, 'dist', commitHash, 'themes', `${themeId}.json`)
+  )
+}
+
+const themeIds = [...themeDirents.map(getThemeName), name]
+writeJson(join(root, 'dist', commitHash, 'config', 'themes.json'), themeIds)
+
+for (const iconThemeDirent of iconThemeDirents) {
+  const iconThemeId = iconThemeDirent.slice('builtin.'.length)
+  cpSync(
+    join(
+      root,
+      'node_modules',
+      '@lvce-editor',
+      'shared-process',
+      'extensions',
+      iconThemeDirent,
+      'icon-theme.json'
+    ),
+    join(root, 'dist', commitHash, 'icon-themes', `${iconThemeId}.json`)
+  )
+  cpSync(
+    join(
+      root,
+      'node_modules',
+      '@lvce-editor',
+      'shared-process',
+      'extensions',
+      iconThemeDirent,
+      'icons'
+    ),
+    join(root, 'dist', commitHash, 'file-icons'),
+    {
+      recursive: true,
+    }
+  )
+}
+
+cpSync(
+  join(root, 'color-theme.json'),
+  join(root, 'dist', commitHash, 'themes', `${name}.json`)
+)
 replaceSync(
   join(root, 'dist', 'index.html'),
   `/${commitHash}`,
@@ -233,3 +365,5 @@ replaceSync(
   `/${commitHash}`,
   `${pathPrefix}/${commitHash}`
 )
+
+// replaceSync(join(root, ))
