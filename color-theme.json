@@ -169,6 +169,14 @@
     {
       "name": "KeywordReturn",
       "foreground": "#fa8d3e"
+    },
+    {
+      "name": "YamlPropertyName",
+      "foreground": "#55B4D4"
+    },
+    {
+      "name": "YamlPropertyValueString",
+      "foreground": "#86B300"
     }
   ]
 }
