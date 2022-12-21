@@ -12,6 +12,8 @@
     "ContextMenuBackground": "rgb(252, 252, 252)",
     "ContextMenuForeground": "rgb(138, 145, 153)",
 
+    "DebugSectionHeaderBackground": "#f8f9fa",
+
     "EditorBackGround": "",
     "EditorScrollBarBackground": "rgba(138, 145, 153, 0.6)",
     "EditorCursorBackground": "#ffaa33",
