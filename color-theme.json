@@ -183,6 +183,14 @@
     {
       "name": "KeywordThis",
       "foreground": "#55B4D4"
+    },
+    {
+      "name": "MarkdownLinkName",
+      "foreground": "#55B4D4"
+    },
+    {
+      "name": "MarkdownLinkUrl",
+      "foreground": "#55B4D4"
     }
   ]
 }
