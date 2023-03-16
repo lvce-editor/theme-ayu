@@ -38,6 +38,7 @@
 
     "MenuItemHoverForeground": "rgb(92, 97, 102)",
     "MenuItemHoverBackground": "rgba(86, 114, 143, 0.12)",
+    "MenuItemSeparatorBackground": "#d4d4d4",
 
     "PanelBackground": "#f8f9fa",
     "PanelBorderTopColor": "#6b7d8f1f",
