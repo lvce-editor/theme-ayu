@@ -67,6 +67,8 @@
     "TitleBarItemHoverForeground": "rgba(0, 0, 0, 0.1)",
     "TitleBarForegroundActive": "rgb(92, 97, 102)",
 
+    "TitleBarButtonCloseHoverForeground": "#fff",
+
     "TreeItemForeground": "#8a9199",
     "TreeItemActiveBackground": "rgba(86, 114, 143, 0.12)"
   },
