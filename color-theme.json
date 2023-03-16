@@ -59,11 +59,12 @@
     "TabActiveBackground": "",
     "TabInactiveBackground": "",
 
-    "TitleBarBackground": "",
+    "TitleBarBackground": "rgb(248, 249, 250)",
     "TitleBarBorderBottomColor": "",
-    "TitleBarForeground": "#8a9199",
+    "TitleBarForeground": "rgb(138, 145, 153)",
     "TitleBarColorInactive": "",
     "TitleBarItemHoverForeground": "rgba(0, 0, 0, 0.1)",
+    "TitleBarForegroundActive": "rgb(92, 97, 102)",
 
     "TreeItemForeground": "#8a9199",
     "TreeItemActiveBackground": "rgba(86, 114, 143, 0.12)"
