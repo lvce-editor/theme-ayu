@@ -196,6 +196,14 @@
     {
       "name": "MarkdownLinkUrl",
       "foreground": "#55B4D4"
+    },
+    {
+      "name": "KeywordAsync",
+      "foreground": "#FA8D3E"
+    },
+    {
+      "name": "KeywordAwait",
+      "foreground": "#FA8D3E"
     }
   ]
 }
