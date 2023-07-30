@@ -204,6 +204,14 @@
     {
       "name": "KeywordAwait",
       "foreground": "#FA8D3E"
+    },
+    {
+      "name": "CssAtRule",
+      "foreground": "#FA8D3E"
+    },
+    {
+      "name": "CssPseudoSelector",
+      "foreground": "#F2AE49"
     }
   ]
 }
