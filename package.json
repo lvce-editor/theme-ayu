@@ -11,7 +11,7 @@
   "license": "MIT",
   "devDependencies": {
     "@lvce-editor/package-extension": "^0.0.5",
-    "@lvce-editor/server": "^0.15.13"
+    "@lvce-editor/server": "^0.16.21"
   },
   "prettier": {
     "semi": false,
