@@ -22,6 +22,9 @@
     "FocusOutline": "#ffaa33b3",
 
     "InputBoxForeground": "rgb(92, 97, 102)",
+    "InputBoxBackground": "#fcfcfc",
+    "InputBoxBorder": "rgba(138, 145, 153, 0.27)",
+    "InputBoxPlaceholderForeground": "rgba(138, 145, 153, 0.5)",
 
     "ListActiveSelectionBackground": "#56728f1f",
     "ListActiveSelectionForeground": "#5c6166",
@@ -31,6 +34,8 @@
     "ListForeground": "rgb(138, 145, 153)",
 
     "MainBackground": "#f8f9fa",
+
+    "MarkdownForeground": "#5c6166",
 
     "MenuBackground": "rgb(252, 252, 252)",
     "MenuForeground": "rgb(138, 145, 153)",
@@ -59,6 +64,7 @@
     "TabActiveForeground": "rgb(92, 97, 102)",
     "TabActiveBackground": "",
     "TabInactiveBackground": "",
+    "TabBorder": "transparent",
 
     "TitleBarBackground": "rgb(248, 249, 250)",
     "TitleBarBorderBottomColor": "",
@@ -70,7 +76,9 @@
     "TitleBarButtonCloseHoverForeground": "#fff",
 
     "TreeItemForeground": "#8a9199",
-    "TreeItemActiveBackground": "rgba(86, 114, 143, 0.12)"
+    "TreeItemActiveBackground": "rgba(86, 114, 143, 0.12)",
+
+    "WorkbenchForeground": "rgb(138, 145, 153)"
   },
   "tokenColors": [
     {
