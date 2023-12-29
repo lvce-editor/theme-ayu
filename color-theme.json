@@ -56,6 +56,9 @@
     "SideBarBorder": "#f8f9fa",
     "SideBarForeground": "rgb(138, 145, 153)",
 
+    "SplitButtonBackground": "#ffaa33",
+    "SplitButtonForeground": "#804a00",
+
     "StatusBarBackground": "#f8f9fa",
     "StatusBarForeground": "#8a9199",
     "StatusBarBorderTopColor": "#f8f9fa",
