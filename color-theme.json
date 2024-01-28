@@ -64,6 +64,11 @@
 
     "SplitButtonBackground": "#ffaa33",
     "SplitButtonForeground": "#804a00",
+    "SplitButtonHoverBackground": "#f9a52e",
+
+    "ButtonSecondaryBackground": "rgba(138, 145, 153, 0.2)",
+    "ButtonSecondaryForeground": "#5c6166",
+    "ButtonSecondaryHoverBackground": "rgba(138, 145, 153, 0.5)",
 
     "StatusBarBackground": "#f8f9fa",
     "StatusBarForeground": "#8a9199",
