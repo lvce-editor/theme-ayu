@@ -27,6 +27,7 @@ jobs:
         with:
           tag_name: ${{ env.RG_VERSION }}
           name: ${{ env.RG_VERSION }}
+          draft: true
 
   build-release:
     name: build-release
@@ -64,3 +65,9 @@ jobs:
           asset_path: ${{ env.ASSET }}
           asset_name: ${{ env.ASSET }}
           asset_content_type: application/octet-stream
+      - name: Publish GitHub release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION="${{ needs.create-release.outputs.rg_version }}"
+          gh release edit $VERSION --draft=false
