@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "node ./node_modules/@lvce-editor/server/bin/server.js --only-extension=. --theme=ayu",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build": "node scripts/build.js"
   },
   "prettier": {
     "semi": false,
