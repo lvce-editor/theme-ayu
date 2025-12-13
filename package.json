@@ -10,8 +10,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@lvce-editor/package-extension": "^1.5.0",
-    "@lvce-editor/server": "^0.56.10"
+    "@lvce-editor/package-extension": "^2.2.0",
+    "@lvce-editor/server": "^0.69.3"
   },
   "prettier": {
     "semi": false,
