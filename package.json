@@ -18,5 +18,6 @@
     "@lvce-editor/server": "^0.69.3",
     "eslint": "^9.39.2",
     "prettier": "^3.7.4"
-  }
+  },
+  "author": "Lvce Editor"
 }
