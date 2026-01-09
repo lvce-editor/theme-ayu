@@ -4,9 +4,9 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "build": "node scripts/build.js",
     "dev": "node ./node_modules/@lvce-editor/server/bin/server.js --only-extension=. --theme=ayu",
-    "lint": "eslint .",
-    "build": "node scripts/build.js"
+    "lint": "eslint ."
   },
   "prettier": {
     "semi": false,
