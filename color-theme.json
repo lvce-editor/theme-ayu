@@ -14,6 +14,7 @@
 
     "ContextMenuBackground": "rgb(252, 252, 252)",
     "ContextMenuForeground": "rgb(138, 145, 153)",
+    "FeatureSelectedBackground":"rgba(107, 125, 143, 0.12)",
 
     "DebugSectionHeaderBackground": "#f8f9fa",
 
