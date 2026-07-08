@@ -1,6 +1,9 @@
 {
   "name": "theme-ayu",
   "version": "0.0.0-dev",
+  "categories": [
+    "Themes"
+  ],
   "license": "MIT",
   "type": "module",
   "scripts": {
