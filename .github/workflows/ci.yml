@@ -11,6 +11,10 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   ci:
     strategy:
@@ -19,11 +23,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v6
         with:
           node-version-file: '.nvmrc'
-      - uses: actions/cache@v5
+      - uses: actions/cache@v6
         id: npm-cache
         with:
           path: '**/node_modules'
@@ -38,7 +42,7 @@ jobs:
           PATH_PREFIX: auto
       - name: Upload artifact
         if: matrix.os == 'ubuntu-22.04'
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./dist
   deploy:
@@ -50,4 +54,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
