@@ -16,10 +16,10 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "@lvce-editor/eslint-config": "^17.1.0",
+    "@lvce-editor/eslint-config": "^17.5.0",
     "@lvce-editor/package-extension": "^3.2.0",
     "@lvce-editor/server": "^0.70.20",
-    "eslint": "^10.7.0",
+    "eslint": "^10.8.0",
     "prettier": "^3.8.0"
   },
   "author": "Lvce Editor"
