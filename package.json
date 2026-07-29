@@ -16,7 +16,7 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "@lvce-editor/eslint-config": "^17.5.0",
+    "@lvce-editor/eslint-config": "^17.6.0",
     "@lvce-editor/package-extension": "^3.2.0",
     "@lvce-editor/server": "^0.70.20",
     "eslint": "^10.8.0",
