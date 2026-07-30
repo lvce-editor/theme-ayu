@@ -9,7 +9,7 @@
   "scripts": {
     "build": "node scripts/build.js",
     "dev": "node ./node_modules/@lvce-editor/server/bin/server.js --only-extension=. --theme=ayu",
-    "lint": "eslint ."
+    "lint": "eslint . && prettier --check . && knip --no-config-hints"
   },
   "prettier": {
     "semi": false,
@@ -17,9 +17,12 @@
   },
   "devDependencies": {
     "@lvce-editor/eslint-config": "^17.6.0",
+    "@lvce-editor/eslint-plugin-github-actions": "^17.7.0",
     "@lvce-editor/package-extension": "^3.2.0",
     "@lvce-editor/server": "^0.70.20",
+    "@lvce-editor/shared-process": "^0.70.27",
     "eslint": "^10.8.0",
+    "knip": "^6.29.0",
     "prettier": "^3.8.0"
   },
   "author": "Lvce Editor"

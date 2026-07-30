@@ -5,8 +5,8 @@
     "ActivityBarActiveForeground": "#8a9199cc",
     "ActivityBarForeground": "#8a919999",
     "ActivityBarBorder": "#f8f9fa",
-    
-    "ExtensionDetailTabSelectedForeground":"#5c6166",
+
+    "ExtensionDetailTabSelectedForeground": "#5c6166",
 
     "BadgeBackground": "#ffaa33",
     "BadgeForeground": "#f8f9fa",
@@ -16,7 +16,7 @@
 
     "ContextMenuBackground": "rgb(252, 252, 252)",
     "ContextMenuForeground": "rgb(138, 145, 153)",
-    "FeatureSelectedBackground":"rgba(107, 125, 143, 0.12)",
+    "FeatureSelectedBackground": "rgba(107, 125, 143, 0.12)",
 
     "DebugSectionHeaderBackground": "#f8f9fa",
 
