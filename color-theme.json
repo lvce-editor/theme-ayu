@@ -44,6 +44,25 @@
 
     "MainBackground": "#f8f9fa",
 
+    "TerminalBackground": "#f8f9fa",
+    "TerminalForeground": "#5c6166",
+    "TerminalAnsiBlack": "#5c6166",
+    "TerminalAnsiRed": "#b42318",
+    "TerminalAnsiGreen": "#567800",
+    "TerminalAnsiYellow": "#875f00",
+    "TerminalAnsiBlue": "#1266a3",
+    "TerminalAnsiMagenta": "#7950a1",
+    "TerminalAnsiCyan": "#00718c",
+    "TerminalAnsiWhite": "#5c6166",
+    "TerminalAnsiBrightBlack": "#62686e",
+    "TerminalAnsiBrightRed": "#c22929",
+    "TerminalAnsiBrightGreen": "#4c6b00",
+    "TerminalAnsiBrightYellow": "#7a5200",
+    "TerminalAnsiBrightBlue": "#075a9a",
+    "TerminalAnsiBrightMagenta": "#70418f",
+    "TerminalAnsiBrightCyan": "#00667f",
+    "TerminalAnsiBrightWhite": "#5c6166",
+
     "MarkdownForeground": "#5c6166",
 
     "MenuBackground": "rgb(252, 252, 252)",
